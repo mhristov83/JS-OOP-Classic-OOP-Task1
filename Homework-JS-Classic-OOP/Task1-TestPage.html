@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Page</title>
+    <script src="scripts/jquery-1.11.1.min.js"></script>
+    <script src="scripts/task1.canvas-figures.circle.js"></script>
+    <script src="scripts/task1.canvas-figures.rect.js"></script>
+    <script src="scripts/task1.canvs.figures.line.js"></script>
+    <style>
+        .description {
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: #808080;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #theCanvas {
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: #00ff90;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="description">
+        <h2>Task 1 Description</h2>
+        <p>
+            Create a module for drawing shapes using Canvas. Implement the following shapes:<br />
+            Rect, by given position (X, Y) and size (Width, Height)<br />
+            Circle, by given center position (X, Y) and radius (R)<br />
+            Line, by given from (X1, Y1) and to (X2, Y2) positions<br />
+        </p>
+    </div>
+    <div id="wrapper"></div>
+    <canvas id="theCanvas" width="500" height="500"></canvas>
+    </div>
+    <script>
+        var canvas = document.getElementById("theCanvas");
+        var context = canvas.getContext("2d");
+        var circle = new Circle(context, 75, 75, 50);
+        circle.draw();
+        var line = new Line(context, 150, 200, 250, 150);
+        line.draw();
+        var rect = new Rect(context, 250, 250, 100, 100);
+        rect.draw();
+    </script>
+</body>
+</html>
